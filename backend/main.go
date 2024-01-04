@@ -7,8 +7,8 @@ import (
 )
 
 var (
-	SSL_CERT = "/etc/letsencrypt/live/api.ayehia0.info/fullchain.pem"
-	SSL_KEY  = "/etc/letsencrypt/live/api.ayehia0.info/privkey.pem"
+	SSL_CERT = "/etc/letsencrypt/live/wires.ayehia0.info/fullchain.pem"
+	SSL_KEY  = "/etc/letsencrypt/live/wires.ayehia0.info/privkey.pem"
 )
 
 func main() {
