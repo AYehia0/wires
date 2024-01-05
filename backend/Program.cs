@@ -8,7 +8,9 @@ builder.Services.AddSwaggerGen();
 // enable https if the env is production
 if (builder.Environment.IsProduction())
 {
-    // enable https
+    // load the environment variables from the .env file
+    Env.Load(".env.prod");
+
     builder
         .WebHost
         .UseKestrel(options =>
@@ -17,8 +19,10 @@ if (builder.Environment.IsProduction())
                 443,
                 listenOptions =>
                 {
-                    // TODO: use env variables
-                    listenOptions.UseHttps("cert.pfx", "password");
+                    listenOptions.UseHttps(
+                        "cert.pfx",
+                        Environment.GetEnvironmentVariable("SSL_PASSWORD")
+                    );
                 }
             );
         });
