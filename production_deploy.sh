@@ -26,6 +26,6 @@ echo "Publishing/Building the server"
 # start the server
 # nohup sudo ./backend &> /dev/null &
 echo "Starting the server"
-cd bin/Release/net8.0 && sudo /snap/bin/dotnet backend.dll &> /dev/null &
+cd bin/Release/net8.0 && nohup sudo /snap/bin/dotnet backend.dll
 
 echo "Deployment completed in $(($SECONDS % 60)) seconds"
