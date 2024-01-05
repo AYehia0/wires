@@ -6,10 +6,13 @@ using System.Text.RegularExpressions;
 
 public static class Env
 {
-    public static void Load(string filename = ".env")
+    public static void Load(string filename = ".env.dev")
     {
         // the path to the .env file is in the root dir of the project
-        var envPath = Path.Combine(Directory.GetCurrentDirectory(), "..", filename);
+        var envPath = Path.Combine(AppContext.BaseDirectory, filename);
+
+        // var envPath = Path.Combine(AppContext.BaseDirectory, "..", filename);
+        Console.WriteLine($"Loading environment variables from {envPath}");
         if (!File.Exists(envPath))
         {
             return;
