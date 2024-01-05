@@ -20,7 +20,7 @@ if (builder.Environment.IsProduction())
                 listenOptions =>
                 {
                     listenOptions.UseHttps(
-                        "cert.pfx",
+                        "~/cert.pfx",
                         Environment.GetEnvironmentVariable("SSL_PASSWORD")
                     );
                 }
